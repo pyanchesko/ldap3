@@ -36,195 +36,101 @@ the ReusableStrategy (for connection pooling) where exceptions are
 trapped in the "effective" connection thread and are sent back to the
 calling connection object in the main (or another) thread.
 
-
+    
 LDAPException
 
---LDAPExceptionError
-
-----LDAPBindError
-
-----LDAPCertificateError
-
-----LDAPChangeError (also inherits from ValueError)
-
-----LDAPCommunicationError (all may inherit from socket.error)
-
-------LDAPReferralError
-
-------LDAPSessionTerminatedByServer
-
-------LDAPSocketCloseError
-
-------LDAPSocketOpenError
-
-------LDAPSocketReceiveError
-
-------LDAPSocketSendError
-
-------LDAPUnknownRequestError
-
-------LDAPUnknownResponseError
-
-----LDAPConfigurationError
-
-------LDAPUnknownStrategyError
-
-------LDAPUnknownAuthenticationMethodError
-
-------LDAPSSLConfigurationError
-
-------LDAPDefinitionError
-
-----LDAPConnectionIsReadOnlyError
-
-----LDAPConnectionPoolNameIsMandatoryError
-
-----LDAPConnectionPoolNotStartedError
-
-----LDAPControlError (also inherits from ValueError)
-
-----LDAPExtensionError
-
-----LDAPInvalidDereferenceAliasesError (also inherits from ValueError)
-
-----LDAPInvalidFilterError
-
-----LDAPInvalidPort
-
-----LDAPInvalidScopeError (also inherits from ValueError)
-
-----LDAPInvalidServerError
-
-----LDAPKeyError (also inherits from KeyError)
-
-----LDAPLDIFError
-
-----LDAPMaximumRetriesError
-
-----LDAPMetricsError
-
-----LDAPObjectClassError (also inherits from ValueError)
-
-----LDAPObjectError
-
-----LDAPPasswordIsMandatoryError
-
-----LDAPCursorError
-
-----LDAPMaximumRetriesError
-
-----LDAPSASLBindInProgressError
-
-----LDAPSASLMechanismNotSupportedError
-
-----LDAPSASLPrepError
-
-----LDAPSchemaError
-
-----LDAPServerPoolError
-
-----LDAPServerPoolExhaustedError
-
-----LDAPSSLNotSupportedError (also inherits from ImportError)
-
-----LDAPStartTLSError
-
-----LDAPTypeError
-
---LDAPOperationResult
-
-----LDAPAdminLimitExceededResult
-
-----LDAPAffectMultipleDSASResult
-
-----LDAPAliasDereferencingProblemResult
-
-----LDAPAliasProblemResult
-
-----LDAPAssertionFailedResult
-
-----LDAPAttributeOrValueExistsResult
-
-----LDAPAuthMethodNotSupportedResult
-
-----LDAPAuthorizationDeniedResult
-
-----LDAPBusyResult
-
-----LDAPCanceledResult
-
-----LDAPCannotCancelResult
-
-----LDAPConfidentialityRequiredResult
-
-----LDAPConstraintViolationResult
-
-----LDAPEntryAlreadyExistsResult
-
-----LDAPESyncRefreshRequiredResult
-
-----LDAPInappropriateAuthenticationResult
-
-----LDAPInappropriateMatchingResult
-
-----LDAPInsufficientAccessRightsResult
-
-----LDAPInvalidAttributeSyntaxResult
-
-----LDAPInvalidCredentialsResult
-
-----LDAPInvalidDNSyntaxResult
-
-----LDAPLCUPInvalidDataResult
-
-----LDAPLCUPReloadRequiredResult
-
-----LDAPLCUPResourcesExhaustedResult
-
-----LDAPLCUPSecurityViolationResult
-
-----LDAPLCUPUnsupportedSchemeResult
-
-----LDAPLoopDetectedResult
-
-----LDAPNamingViolationResult
-
-----LDAPNoSuchAttributeResult
-
-----LDAPNoSuchObjectResult
-
-----LDAPNoSuchOperationResult
-
-----LDAPNotAllowedOnNotLeafResult
-
-----LDAPNotAllowedOnRDNResult
-
-----LDAPObjectClassModsProhibitedResult
-
-----LDAPObjectClassViolationResult
-
-----LDAPOperationsErrorResult
-
-----LDAPOtherResult
-
-----LDAPProtocolErrorResult
-
-----LDAPReferralResult
-
-----LDAPSASLBindInProgressResult
-
-----LDAPSizeLimitExceededResult
-
-----LDAPStrongerAuthRequiredResult
-
-----LDAPTimeLimitExceededResult
-
-----LDAPTooLateResult
-
-----LDAPUnavailableCriticalExtensionResult
-
-----LDAPUnavailableResult
-
-----LDAPUndefinedAttributeTypeResult
-
-----LDAPUnwillingToPerformResult
+* LDAPExceptionError
+	* LDAPBindError
+	* LDAPCertificateError
+	* LDAPChangeError (also inherits from ValueError)
+	* LDAPCommunicationError (all may inherit from socket.error)
+		* LDAPReferralError
+		* LDAPSessionTerminatedByServer
+		* LDAPSocketCloseError
+		* LDAPSocketOpenError
+		* LDAPSocketReceiveError
+		* LDAPSocketSendError
+		* LDAPUnknownRequestError
+		* LDAPUnknownResponseError
+	* LDAPConfigurationError
+		* LDAPUnknownStrategyError
+		* LDAPUnknownAuthenticationMethodError
+		* LDAPSSLConfigurationError
+		* LDAPDefinitionError
+	* LDAPConnectionIsReadOnlyError
+	* LDAPConnectionPoolNameIsMandatoryError
+	* LDAPConnectionPoolNotStartedError
+	* LDAPControlError (also inherits from ValueError)
+	* LDAPExtensionError
+	* LDAPInvalidDereferenceAliasesError (also inherits from ValueError)
+	* LDAPInvalidFilterError
+	* LDAPInvalidPort
+	* LDAPInvalidScopeError (also inherits from ValueError)
+	* LDAPInvalidServerError
+	* LDAPKeyError (also inherits from KeyError)
+	* LDAPLDIFError
+	* LDAPMaximumRetriesError
+	* LDAPMetricsError
+	* LDAPObjectClassError (also inherits from ValueError)
+	* LDAPObjectError
+	* LDAPPasswordIsMandatoryError
+	* LDAPCursorError
+	* LDAPMaximumRetriesError
+	* LDAPSASLBindInProgressError
+	* LDAPSASLMechanismNotSupportedError
+	* LDAPSASLPrepError
+	* LDAPSchemaError
+	* LDAPServerPoolError
+	* LDAPServerPoolExhaustedError
+	* LDAPSSLNotSupportedError (also inherits from ImportError)
+	* LDAPStartTLSError
+	* LDAPTypeError
+* LDAPOperationResult
+	* LDAPAdminLimitExceededResult
+	* LDAPAffectMultipleDSASResult
+	* LDAPAliasDereferencingProblemResult
+	* LDAPAliasProblemResult
+	* LDAPAssertionFailedResult
+	* LDAPAttributeOrValueExistsResult
+	* LDAPAuthMethodNotSupportedResult
+	* LDAPAuthorizationDeniedResult
+	* LDAPBusyResult
+	* LDAPCanceledResult
+	* LDAPCannotCancelResult
+	* LDAPConfidentialityRequiredResult
+	* LDAPConstraintViolationResult
+	* LDAPEntryAlreadyExistsResult
+	* LDAPESyncRefreshRequiredResult
+	* LDAPInappropriateAuthenticationResult
+	* LDAPInappropriateMatchingResult
+	* LDAPInsufficientAccessRightsResult
+	* LDAPInvalidAttributeSyntaxResult
+	* LDAPInvalidCredentialsResult
+	* LDAPInvalidDNSyntaxResult
+	* LDAPLCUPInvalidDataResult
+	* LDAPLCUPReloadRequiredResult
+	* LDAPLCUPResourcesExhaustedResult
+	* LDAPLCUPSecurityViolationResult
+	* LDAPLCUPUnsupportedSchemeResult
+	* LDAPLoopDetectedResult
+	* LDAPNamingViolationResult
+	* LDAPNoSuchAttributeResult
+	* LDAPNoSuchObjectResult
+	* LDAPNoSuchOperationResult
+	* LDAPNotAllowedOnNotLeafResult
+	* LDAPNotAllowedOnRDNResult
+	* LDAPObjectClassModsProhibitedResult
+	* LDAPObjectClassViolationResult
+	* LDAPOperationsErrorResult
+	* LDAPOtherResult
+	* LDAPProtocolErrorResult
+	* LDAPReferralResult
+	* LDAPSASLBindInProgressResult
+	* LDAPSizeLimitExceededResult
+	* LDAPStrongerAuthRequiredResult
+	* LDAPTimeLimitExceededResult
+	* LDAPTooLateResult
+	* LDAPUnavailableCriticalExtensionResult
+	* LDAPUnavailableResult
+	* LDAPUndefinedAttributeTypeResult
+	* LDAPUnwillingToPerformResult
